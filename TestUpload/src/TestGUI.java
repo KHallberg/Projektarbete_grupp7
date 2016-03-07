@@ -57,7 +57,7 @@ public class TestGUI extends JFrame {
 		txtpnVadVillDu.setFont(new Font("Calibri", Font.PLAIN, 68));
 		txtpnVadVillDu.setText("\r\n\r\n\r\n\r\n\r\nVad vill du se p\u00E5 den h\u00E4r sk\u00E4rmen?\r\nMaila niagaramonitors@gmail.com");
 		txtpnVadVillDu.setBackground(Color.WHITE);
-		txtpnVadVillDu.setBounds(450, 50, (int)width, (int)height);
+		txtpnVadVillDu.setBounds(400, 50, (int)width, (int)height);
 		contentPane.add(txtpnVadVillDu);
 	}
 }
