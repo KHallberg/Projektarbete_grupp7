@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
@@ -10,6 +11,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.JTextPane;
 
 public class TestGUI extends JFrame {
 
@@ -45,15 +47,17 @@ public class TestGUI extends JFrame {
 		this.setBounds(0, 0, (int)width, (int)height);
 		this.setUndecorated(true);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Hello World");
-		lblNewLabel.setFont(new Font("Calibri", Font.PLAIN, 38));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBackground(Color.GRAY);
-		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
-		contentPane.add(lblNewLabel);
+		JTextPane txtpnVadVillDu = new JTextPane();
+		txtpnVadVillDu.setEditable(false);
+		txtpnVadVillDu.setFont(new Font("Calibri", Font.PLAIN, 68));
+		txtpnVadVillDu.setText("\r\n\r\n\r\n\r\n\r\nVad vill du se p\u00E5 den h\u00E4r sk\u00E4rmen?\r\nMaila niagaramonitors@gmail.com");
+		txtpnVadVillDu.setBackground(Color.WHITE);
+		txtpnVadVillDu.setBounds(450, 50, (int)width, (int)height);
+		contentPane.add(txtpnVadVillDu);
 	}
 }
