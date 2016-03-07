@@ -52,12 +52,16 @@ public class TestGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextPane txtpnVadVillDu = new JTextPane();
-		txtpnVadVillDu.setEditable(false);
-		txtpnVadVillDu.setFont(new Font("Calibri", Font.PLAIN, 68));
-		txtpnVadVillDu.setText("\r\n\r\n\r\n\r\n\r\nVad vill du se p\u00E5 den h\u00E4r sk\u00E4rmen?\r\nMaila niagaramonitors@gmail.com");
-		txtpnVadVillDu.setBackground(Color.WHITE);
-		txtpnVadVillDu.setBounds(400, 50, (int)width, (int)height);
-		contentPane.add(txtpnVadVillDu);
+		JLabel lblNewLabel = new JLabel("Vad vill du se h\u00E4r?");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Calibri", Font.PLAIN, 68));
+		lblNewLabel.setBounds(0, 0, (int)width, (int)height-70);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Maila niagaramonitors@gmail.com");
+		lblNewLabel_1.setFont(new Font("Calibri", Font.PLAIN, 48));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(0, 0, (int)width, (int)height+100);
+		contentPane.add(lblNewLabel_1);
 	}
 }
