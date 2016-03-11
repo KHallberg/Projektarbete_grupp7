@@ -53,7 +53,7 @@ public class TestGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(TestGUI.class.getResource("/Images/Kalendersk\u00E4rm 1080.jpg")));
+		lblNewLabel.setIcon(new ImageIcon(TestGUI.class.getResource("/Images/Kalendersk\u00E4rm 1080.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
 		
