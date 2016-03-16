@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -110,7 +111,13 @@ public class RSS {
 		System.out.println("Beskrivning: "+itemList.get(50).getDescription());
 		System.out.println("Start tid: " +itemList.get(50).getTimeStart());
 		System.out.println("Slut tid: " +itemList.get(50).getTimeEnd());
-		
+		for(Item i:itemList){
+			System.out.println("osorterad  " +i.getTimeExact().toString());
+		}
+		Collections.sort(itemList);
+		for(Item i:itemList){
+			System.out.println("sorterad  " +i.getTimeExact().toString());
+		}
 		
 	}
 	
