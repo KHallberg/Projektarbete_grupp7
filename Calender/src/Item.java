@@ -1,11 +1,17 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class Item implements Comparable{
 private String description;
 private String title;
-private String time;
-private String timeExact;
+//private Date time;
+private Date timeExact;
 private String timeStart;
 private String timeEnd;
+
 
 public String getTimeStart() {
 	return timeStart;
@@ -31,18 +37,52 @@ public String getTitle() {
 public void setTitle(String title) {
 	this.title = title;
 }
-public String getTime() {
+/*
+public Date getTime() {
 	return time;
 }
-public void setTime(String time) {
-	this.time = time;
+public void setTime(String stringTime) {
+	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+	try {
+		this.time = sdf.parse(stringTime);
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
 }
+*/
+
+public Date getTimeExact() {
+	return timeExact;
+}
+public void setTimeExact(String timeExact) {
+	//System.out.println("HejHej   "+timeExact);
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	try {
+		this.timeExact = sdf.parse(timeExact);
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+}
+
+
+
+/*
 public String getTimeExact() {
 	return timeExact;
 }
 public void setTimeExcact(String timeExact) {
 	this.timeExact = timeExact;
 }
+*/
+
+
+
+
 @Override
 public int compareTo(Object o) {
 	// TODO Auto-generated method stub

@@ -73,18 +73,19 @@ public class RSS {
 
 					String time = eElement.getElementsByTagName("content:encoded").item(0).getTextContent();
 					time = time.trim();
-					System.out.println("time: "+time.length());
+					//System.out.println("time: "+time.length());
 					int j = time.indexOf("</strong>");
-					System.out.println("length: "+ j);
+					//System.out.println("length: "+ j);
 					try{
 						if (time.length()>100){
-						String timeExact = time.substring(j+10,j+51);
+						String timeExact = time.substring(j+10,j+30);
 						System.out.println("Sub: "+timeExact);
-						item.setTimeExcact(timeExact);
+						item.setTimeExact(timeExact);
 						String timeStart = time.substring(j+21,j+26);
 						item.setTimeStart(timeStart);
 						String timeEnd = time.substring(j+43,j+48);
 						item.setTimeEnd(timeEnd);
+						
 
 						}
 					}catch(Exception e){}
@@ -103,12 +104,12 @@ public class RSS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Storlek: "+itemList.size());
-		System.out.println("Tid: " +itemList.get(80).getTimeExact());
-		System.out.println("Vad: " +itemList.get(80).getTitle());
-		System.out.println("Beskrivning: "+itemList.get(80).getDescription());
-		System.out.println("Start tid: " +itemList.get(80).getTimeStart());
-		System.out.println("Slut tid: " +itemList.get(80).getTimeEnd());
+		//System.out.println("Storlek: "+itemList.size());
+		System.out.println("Tid: " +itemList.get(50).getTimeExact());
+		System.out.println("Vad: " +itemList.get(50).getTitle());
+		System.out.println("Beskrivning: "+itemList.get(50).getDescription());
+		System.out.println("Start tid: " +itemList.get(50).getTimeStart());
+		System.out.println("Slut tid: " +itemList.get(50).getTimeEnd());
 		
 		
 	}
