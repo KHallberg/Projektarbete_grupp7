@@ -81,10 +81,14 @@ public class RSS {
 						String timeExact = time.substring(j+10,j+51);
 						System.out.println("Sub: "+timeExact);
 						item.setTimeExcact(timeExact);
+						String timeStart = time.substring(j+21,j+26);
+						item.setTimeStart(timeStart);
+						String timeEnd = time.substring(j+43,j+48);
+						item.setTimeEnd(timeEnd);
 
 						}
 					}catch(Exception e){}
-					//timeExact.
+					
 					
 					String description = eElement.getElementsByTagName("description").item(0).getTextContent();
 					item.setDescription(description);
@@ -103,6 +107,9 @@ public class RSS {
 		System.out.println("Tid: " +itemList.get(80).getTimeExact());
 		System.out.println("Vad: " +itemList.get(80).getTitle());
 		System.out.println("Beskrivning: "+itemList.get(80).getDescription());
+		System.out.println("Start tid: " +itemList.get(80).getTimeStart());
+		System.out.println("Slut tid: " +itemList.get(80).getTimeEnd());
+		
 		
 	}
 	
