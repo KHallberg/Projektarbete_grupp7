@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -21,12 +23,12 @@ import org.xml.sax.SAXException;
 public class RSS {
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException {
 		
 		
-		 //File inputFile = new File("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");  // läsa från en url istället
+		URL inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");  // läser från en URL
 		
-	         File inputFile = new File("rss/rss.xml");  // läsa från en url istället
+	         //File inputFile = new File("rss/rss.xml");  // läsa från en url istället
 	         DocumentBuilderFactory dbFactory 
 	            = DocumentBuilderFactory.newInstance();
 	         DocumentBuilder dBuilder = null;
@@ -40,7 +42,8 @@ public class RSS {
 
 	         Document doc = null;
 			try {
-				doc = (Document) dBuilder.parse(inputFile);
+				doc = (Document) dBuilder.parse(inputFile.toString());
+				//doc = (Document) dBuilder.parse(inputFile);
 			} catch (SAXException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -64,19 +67,21 @@ public class RSS {
 		                System.out.println();
 		               
 		                String title=eElement
-	                     .getElementsByTagName("title") // lägg till i en arrayList
+	                     .getElementsByTagName("title") 
 	                     .item(0)
 	                     .getTextContent();
 		                System.out.println(title);
+		               
 		                
 		                String time=eElement
-		                		.getElementsByTagName("content:encoded") // lägg till i en arrayList
+		                		.getElementsByTagName("content:encoded") 
 			                     .item(0)
 			                     .getTextContent();
 				                System.out.println(time);
+				                
 		                
 		                String description=eElement
-		                		.getElementsByTagName("description") // lägg till i en arrayList
+		                		.getElementsByTagName("description") 
 			                     .item(0)
 			                     .getTextContent();
 				                System.out.println(description);
