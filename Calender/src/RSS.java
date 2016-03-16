@@ -61,16 +61,16 @@ public class RSS {
 			for (int i = 0; i < nodeList.getLength(); i++) {
 				Item item = new Item();
 				Node nNode = nodeList.item(i);
-				System.out.println("\nCurrent Element :" + nNode.getNodeName());
+				//System.out.println("\nCurrent Element :" + nNode.getNodeName());
 
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element eElement = (Element) nNode;
 
-					System.out.println();
+				
 
 					String title = eElement.getElementsByTagName("title").item(0).getTextContent();
 					item.setTitle(title);
-					System.out.println("Title: "+title);
+					//System.out.println("Title: "+title);
 
 					String time = eElement.getElementsByTagName("content:encoded").item(0).getTextContent();
 					time = time.trim();
@@ -80,7 +80,7 @@ public class RSS {
 					try{
 						if (time.length()>100){
 						String timeExact = time.substring(j+10,j+30);
-						System.out.println("Sub: "+timeExact);
+						//System.out.println("Sub: "+timeExact);
 						item.setTimeExact(timeExact);
 						String timeStart = time.substring(j+21,j+26);
 						item.setTimeStart(timeStart);
@@ -94,7 +94,7 @@ public class RSS {
 					
 					String description = eElement.getElementsByTagName("description").item(0).getTextContent();
 					item.setDescription(description);
-					System.out.println("description: "+description);
+					//System.out.println("description: "+description);
 					
 					itemList.add(item);
 
@@ -105,19 +105,26 @@ public class RSS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//System.out.println("Storlek: "+itemList.size());
+		/*//System.out.println("Storlek: "+itemList.size());
 		System.out.println("Tid: " +itemList.get(50).getTimeExact());
 		System.out.println("Vad: " +itemList.get(50).getTitle());
 		System.out.println("Beskrivning: "+itemList.get(50).getDescription());
 		System.out.println("Start tid: " +itemList.get(50).getTimeStart());
 		System.out.println("Slut tid: " +itemList.get(50).getTimeEnd());
+		*/
 		for(Item i:itemList){
-			System.out.println("osorterad  " +i.getTimeExact().toString());
+			//System.out.println("osorterad  " +i.getTimeExact().toString());
 		}
 		Collections.sort(itemList);
 		for(Item i:itemList){
 			System.out.println("sorterad  " +i.getTimeExact().toString());
+			System.out.println("Titel:  " +i.getTitle().toString());
+			System.out.println("Start:  " +i.getTimeStart().toString());
+			System.out.println("Slut:  " +i.getTimeEnd().toString());
+			System.out.println("Beskrivning:  " +i.getDescription().toString()+"\n");
+			
 		}
+		
 		
 	}
 	
