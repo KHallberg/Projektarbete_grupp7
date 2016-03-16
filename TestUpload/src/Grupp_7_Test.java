@@ -55,7 +55,7 @@ public class Grupp_7_Test extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel();
 		lblNewLabel_1.setIcon(new ImageIcon(Grupp_7_Test.class.getResource("/Wireframe_img/DriftInfo_Screen-1680-1050.jpg")));
-		lblNewLabel_1.setBounds(0, -100, (int)width, (int)height);
+		lblNewLabel_1.setBounds(0, -100 , (int)width, (int)height);
 		contentPane.add(lblNewLabel_1);
 	}
 }
