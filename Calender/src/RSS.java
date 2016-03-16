@@ -73,9 +73,9 @@ public class RSS {
 
 					String time = eElement.getElementsByTagName("content:encoded").item(0).getTextContent();
 					time = time.trim();
-					System.out.println("time: "+time.length());
+					//System.out.println("time: "+time.length());
 					int j = time.indexOf("</strong>");
-					System.out.println("length: "+ j);
+					//System.out.println("length: "+ j);
 					try{
 						if (time.length()>100){
 						String timeExact = time.substring(j+10,j+30);
@@ -104,7 +104,7 @@ public class RSS {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("Storlek: "+itemList.size());
+		//System.out.println("Storlek: "+itemList.size());
 		System.out.println("Tid: " +itemList.get(50).getTimeExact());
 		System.out.println("Vad: " +itemList.get(50).getTitle());
 		System.out.println("Beskrivning: "+itemList.get(50).getDescription());
