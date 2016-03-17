@@ -132,14 +132,40 @@ public class KalenderGUI extends JFrame {
 		JLabel lblMars = new JLabel("21 MARS:");
 		lblMars.setForeground(new Color(255, 255, 255));
 		lblMars.setFont(new Font("Futura LT", Font.PLAIN, 40));
-		lblMars.setBounds(1281, 690, 209, 50);
+		lblMars.setBounds(1273, 690, 209, 50);
 		contentPane.add(lblMars);
+		
+		JLabel lblHeadNextDate_1 = new JLabel("");
+		lblHeadNextDate_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
+		lblHeadNextDate_1.setBounds(1280, 741, 550, 16);
+		contentPane.add(lblHeadNextDate_1);
+		lblHeadNextDate_1.setText(a.getInfo().get(2).getTitle().toString());
+		
+		JLabel lblTimeNextDate_1 = new JLabel("");
+		lblTimeNextDate_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
+		lblTimeNextDate_1.setBounds(1273, 779, 174, 20);
+		contentPane.add(lblTimeNextDate_1);
+		lblTimeNextDate_1.setText(a.getInfo().get(2).getTimeStart().toString()+"-"+a.getInfo().get(2).getTimeEnd().toString());
+		
+		JLabel lblHeadNextDate_2 = new JLabel("");
+		lblHeadNextDate_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
+		lblHeadNextDate_2.setBounds(1273, 847, 550, 20);
+		contentPane.add(lblHeadNextDate_2);
+		lblHeadNextDate_2.setText(a.getInfo().get(3).getTitle().toString());
+		
+		JLabel lblTimeNextDate_2 = new JLabel("");
+		lblTimeNextDate_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
+		lblTimeNextDate_2.setBounds(1273, 895, 174, 20);
+		contentPane.add(lblTimeNextDate_2);
+		lblTimeNextDate_2.setText(a.getInfo().get(3).getTimeStart().toString()+"-"+a.getInfo().get(3).getTimeEnd().toString());
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
 		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Kalendersk\u00E4rm_clean.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
+		
+		
 		
 
 		
