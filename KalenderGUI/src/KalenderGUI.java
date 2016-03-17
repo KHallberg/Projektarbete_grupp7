@@ -83,6 +83,7 @@ public class KalenderGUI extends JFrame {
 		contentPane.add(lblPlace);
 		
 		JTextPane txtpnDetails = new JTextPane();
+		txtpnDetails.setEditable(false);
 		txtpnDetails.setFont(new Font("Futura LT", Font.PLAIN, 13));
 		txtpnDetails.setText("DETAILS");
 		txtpnDetails.setBounds(85, 526, 484, 329);

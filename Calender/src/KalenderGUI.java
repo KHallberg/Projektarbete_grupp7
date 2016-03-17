@@ -19,6 +19,10 @@ import javax.swing.UIManager;
 public class KalenderGUI extends JFrame {
 
 	private JPanel contentPane;
+	public TimeAndDate myTimeAndDate;
+	private static JLabel lblTime;
+	private static JLabel lblDate;
+	
 
 	/**
 	 * Launch the application.
@@ -55,16 +59,18 @@ public class KalenderGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblDate = new JLabel("DATE");
-		lblDate.setFont(new Font("Futura LT", Font.PLAIN, 54));
+		lblDate = new JLabel("DATE");
+		lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblDate.setFont(new Font("Futura LT", Font.PLAIN, 48));
 		lblDate.setForeground(Color.WHITE);
-		lblDate.setBounds(862, 67, 262, 50);
+		lblDate.setBounds(677, 121, 461, 67);
 		contentPane.add(lblDate);
 		
-		JLabel lblTime = new JLabel("TIME");
+		lblTime = new JLabel("TIME");
+		lblTime.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTime.setForeground(Color.WHITE);
-		lblTime.setFont(new Font("Futura LT", Font.PLAIN, 54));
-		lblTime.setBounds(862, 130, 262, 50);
+		lblTime.setFont(new Font("Futura LT", Font.PLAIN, 48));
+		lblTime.setBounds(677, 65, 461, 50);
 		contentPane.add(lblTime);
 		
 		JLabel lblHeadline = new JLabel("");
@@ -165,16 +171,14 @@ public class KalenderGUI extends JFrame {
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
 		
+		myTimeAndDate = new TimeAndDate(this);	
 		
-		
-
-		
-
-		
-
-		
-		
-		
-		
+	}
+	public static void setTimeOnLabel(String time){
+		lblTime.setText(time);
+	}
+	
+	public static void setDateOnLabel(String date){
+		lblDate.setText(date);
 	}
 }
