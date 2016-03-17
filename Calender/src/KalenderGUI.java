@@ -70,20 +70,20 @@ public class KalenderGUI extends JFrame {
 		JLabel lblHeadline = new JLabel("");
 		lblHeadline.setFont(new Font("Futura LT", Font.PLAIN, 39));
 		lblHeadline.setForeground(Color.BLACK);
-		lblHeadline.setBounds(65, 324, 800, 50);
+		lblHeadline.setBounds(69, 324, 800, 50);
 		contentPane.add(lblHeadline);
 		lblHeadline.setText(a.getInfo().get(0).getTitle().toString());
 		
 		JLabel lblTime_1 = new JLabel("");
 		lblTime_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblTime_1.setForeground(Color.BLACK);
-		lblTime_1.setBounds(129, 409, 200, 16);
+		lblTime_1.setBounds(116, 410, 200, 16);
 		contentPane.add(lblTime_1);
 		lblTime_1.setText(a.getInfo().get(0).getTimeStart().toString()+"-"+a.getInfo().get(0).getTimeEnd().toString());
 		
 		JLabel lblPlace = new JLabel("PLACE");
 		lblPlace.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblPlace.setBounds(129, 439, 607, 20);
+		lblPlace.setBounds(136, 439, 607, 20);
 		contentPane.add(lblPlace);
 		lblPlace.setText(a.getInfo().get(0).getPlace().toString());
 		
@@ -91,7 +91,7 @@ public class KalenderGUI extends JFrame {
 		txtpnDetails.setEditable(false);
 		txtpnDetails.setBackground(new Color(240, 241, 241));
 		txtpnDetails.setFont(new Font("Futura LT", Font.PLAIN, 22));
-		txtpnDetails.setBounds(105, 518, 988, 340);
+		txtpnDetails.setBounds(116, 536, 968, 425);
 		contentPane.add(txtpnDetails);
 		txtpnDetails.setText(a.getInfo().get(0).getDescription().toString());
 		
@@ -121,12 +121,12 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblTid = new JLabel("Tid:");
 		lblTid.setFont(new Font("Futura LT", Font.BOLD, 20));
-		lblTid.setBounds(65, 407, 53, 20);
+		lblTid.setBounds(69, 408, 53, 20);
 		contentPane.add(lblTid);
 		
 		JLabel lblPlats = new JLabel("Plats:");
 		lblPlats.setFont(new Font("Futura LT", Font.BOLD, 20));
-		lblPlats.setBounds(65, 440, 71, 18);
+		lblPlats.setBounds(69, 440, 71, 18);
 		contentPane.add(lblPlats);
 		
 		JLabel lblMars = new JLabel("21 MARS:");
@@ -161,7 +161,7 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
-		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Kalendersk\u00E4rm_clean.png")));
+		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Kalendersk\u00E4rm_clean_new.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
 		
