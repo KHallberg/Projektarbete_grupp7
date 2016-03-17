@@ -82,7 +82,7 @@ public class RSS_new {
 					// System.out.println("time: "+time.length());
 					int j = time.indexOf("</strong>");
 					int placeStop = time.indexOf("<br />", time.indexOf("<br />") + 1);
-					System.out.println(placeStop);
+					//System.out.println(placeStop);
 					// System.out.println("length: "+ j);
 					try {
 						if (time.length() > 100) {
@@ -119,13 +119,14 @@ public class RSS_new {
 		}
 		Collections.sort(itemList);
 		for (Item i : itemList) {
+			/*
 			System.out.println("sorterad  " + i.getTimeExact().toString());
 			System.out.println("Titel:  " + i.getTitle().toString());
 			System.out.println("Start:  " + i.getTimeStart().toString());
 			System.out.println("Slut:  " + i.getTimeEnd().toString());
 			System.out.println("Plats:  " + i.getPlace().toString());
 			System.out.println("Beskrivning:  " + i.getDescription().toString() + "\n");
-
+*/
 		}
 		return itemList;
 
