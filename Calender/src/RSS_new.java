@@ -81,7 +81,7 @@ public class RSS_new {
 					time = time.trim();
 					// System.out.println("time: "+time.length());
 					int j = time.indexOf("</strong>");
-					int placeStop = time.indexOf("<br /><strong>", time.indexOf("<br /><strong>") + 1);
+					int placeStop = time.indexOf("<br />", time.indexOf("<br />") + 1);
 					System.out.println(placeStop);
 					// System.out.println("length: "+ j);
 					try {
