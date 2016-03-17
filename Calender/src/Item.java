@@ -10,6 +10,15 @@ public class Item implements Comparable<Item> {
 	private Date timeExact;
 	private String timeStart;
 	private String timeEnd;
+	private String place;
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
 
 	public String getTimeStart() {
 		return timeStart;
