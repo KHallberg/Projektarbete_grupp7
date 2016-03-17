@@ -77,38 +77,55 @@ public class KalenderGUI extends JFrame {
 		JLabel lblTime_1 = new JLabel("");
 		lblTime_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblTime_1.setForeground(Color.BLACK);
-		lblTime_1.setBounds(85, 422, 200, 16);
+		lblTime_1.setBounds(85, 409, 200, 16);
 		contentPane.add(lblTime_1);
 		lblTime_1.setText(a.getInfo().get(0).getTimeStart().toString()+"-"+a.getInfo().get(0).getTimeEnd().toString());
 		
 		JLabel lblPlace = new JLabel("PLACE");
 		lblPlace.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblPlace.setBounds(85, 451, 60, 20);
+		lblPlace.setBounds(85, 438, 650, 20);
 		contentPane.add(lblPlace);
 		lblPlace.setText(a.getInfo().get(0).getPlace().toString());
 		
 		JTextPane txtpnDetails = new JTextPane();
+		txtpnDetails.setEditable(false);
 		txtpnDetails.setBackground(new Color(240, 241, 241));
 		txtpnDetails.setFont(new Font("Futura LT", Font.PLAIN, 22));
 		txtpnDetails.setBounds(105, 518, 484, 340);
 		contentPane.add(txtpnDetails);
 		txtpnDetails.setText(a.getInfo().get(0).getDescription().toString());
 		
-		JLabel lblHeadline_1 = new JLabel("HEADLINE");
+		JLabel lblHeadline_1 = new JLabel("");
 		lblHeadline_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblHeadline_1.setBounds(1273, 300, 100, 20);
+		lblHeadline_1.setBounds(1273, 300, 550, 20);
 		contentPane.add(lblHeadline_1);
+		lblHeadline_1.setText(a.getInfo().get(0).getTitle().toString());
 		
 		JLabel lblTime_2 = new JLabel("TIME");
 		lblTime_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblTime_2.setBounds(1273, 335, 70, 20);
+		lblTime_2.setBounds(1273, 335, 174, 20);
 		contentPane.add(lblTime_2);
+		lblTime_2.setText(a.getInfo().get(0).getTimeStart().toString()+"-"+a.getInfo().get(0).getTimeEnd().toString());
+		
+		JLabel lblHeadline_2 = new JLabel("");
+		lblHeadline_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
+		lblHeadline_2.setBounds(1273, 385, 550, 20);
+		contentPane.add(lblHeadline_2);
+		lblHeadline_2.setText(a.getInfo().get(1).getTitle().toString());
+		
+		JLabel lblTime_3 = new JLabel("");
+		lblTime_3.setFont(new Font("Futura LT", Font.PLAIN, 20));
+		lblTime_3.setBounds(1273, 415, 174, 20);
+		contentPane.add(lblTime_3);
+		lblTime_3.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
 		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Kalendersk\u00E4rm_clean.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
+		
+		
 		
 		
 	}
