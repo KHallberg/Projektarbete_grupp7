@@ -19,32 +19,33 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+public class RSS_new {
 
+	public ArrayList<Item> itemList;
 
+	public ArrayList<Item> getInfo() {
 
-public class RSS {
-	
+		itemList = new ArrayList<Item>();
 
-	public static void main(String[] args) throws MalformedURLException {
-		
-		
-		
-	ArrayList<Item>itemList = new ArrayList<Item>();
+		URL inputFile = null;
+		try {
+			inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
+		} catch (MalformedURLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		} // läser
+			// från
+			// en
+			// URL
 
-		URL inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/"); // läser
-																								// från
-																								// en
-																								// URL
-
-		
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = null;
 
 		try {
 			dBuilder = dbFactory.newDocumentBuilder();
-		} catch (ParserConfigurationException e) {
+		} catch (ParserConfigurationException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 
 		Document doc = null;
@@ -62,76 +63,67 @@ public class RSS {
 		String expression = "//item"; // // plockar item från hela xml trädet
 		try {
 			NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(doc, XPathConstants.NODESET);
-			
+
 			for (int i = 0; i < nodeList.getLength(); i++) {
 				Item item = new Item();
 				Node nNode = nodeList.item(i);
-				//System.out.println("\nCurrent Element :" + nNode.getNodeName());
+				// System.out.println("\nCurrent Element :" +
+				// nNode.getNodeName());
 
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element eElement = (Element) nNode;
 
-				
-
 					String title = eElement.getElementsByTagName("title").item(0).getTextContent();
 					item.setTitle(title);
-					//System.out.println("Title: "+title);
+					// System.out.println("Title: "+title);
 
 					String time = eElement.getElementsByTagName("content:encoded").item(0).getTextContent();
 					time = time.trim();
-					//System.out.println("time: "+time.length());
+					// System.out.println("time: "+time.length());
 					int j = time.indexOf("</strong>");
-					//System.out.println("length: "+ j);
-					try{
-						if (time.length()>100){
-						String timeExact = time.substring(j+10,j+30);
-						//System.out.println("Sub: "+timeExact);
-						item.setTimeExact(timeExact);
-						String timeStart = time.substring(j+21,j+26);
-						item.setTimeStart(timeStart);
-						String timeEnd = time.substring(j+43,j+48);
-						item.setTimeEnd(timeEnd);
-						
+					// System.out.println("length: "+ j);
+					try {
+						if (time.length() > 100) {
+							String timeExact = time.substring(j + 10, j + 30);
+							// System.out.println("Sub: "+timeExact);
+							item.setTimeExact(timeExact);
+							String timeStart = time.substring(j + 21, j + 26);
+							item.setTimeStart(timeStart);
+							String timeEnd = time.substring(j + 43, j + 48);
+							item.setTimeEnd(timeEnd);
 
 						}
-					}catch(Exception e){}
-					
-					
+					} catch (Exception e) {
+					}
+
 					String description = eElement.getElementsByTagName("description").item(0).getTextContent();
 					item.setDescription(description);
-					//System.out.println("description: "+description);
-					
+					// System.out.println("description: "+description);
+
 					itemList.add(item);
 
 				}
 
 			}
-		} catch (XPathExpressionException e) {
+		} catch (XPathExpressionException e11) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e11.printStackTrace();
 		}
-		/*//System.out.println("Storlek: "+itemList.size());
-		System.out.println("Tid: " +itemList.get(50).getTimeExact());
-		System.out.println("Vad: " +itemList.get(50).getTitle());
-		System.out.println("Beskrivning: "+itemList.get(50).getDescription());
-		System.out.println("Start tid: " +itemList.get(50).getTimeStart());
-		System.out.println("Slut tid: " +itemList.get(50).getTimeEnd());
-		*/
-		for(Item i:itemList){
-			//System.out.println("osorterad  " +i.getTimeExact().toString());
+		
+		for (Item i : itemList) {
+			// System.out.println("osorterad " +i.getTimeExact().toString());
 		}
 		Collections.sort(itemList);
-		for(Item i:itemList){
-			System.out.println("sorterad  " +i.getTimeExact().toString());
-			System.out.println("Titel:  " +i.getTitle().toString());
-			System.out.println("Start:  " +i.getTimeStart().toString());
-			System.out.println("Slut:  " +i.getTimeEnd().toString());
-			System.out.println("Beskrivning:  " +i.getDescription().toString()+"\n");
-			
+		for (Item i : itemList) {
+			System.out.println("sorterad  " + i.getTimeExact().toString());
+			System.out.println("Titel:  " + i.getTitle().toString());
+			System.out.println("Start:  " + i.getTimeStart().toString());
+			System.out.println("Slut:  " + i.getTimeEnd().toString());
+			System.out.println("Beskrivning:  " + i.getDescription().toString() + "\n");
+
 		}
-		
-		
+		return itemList;
+
 	}
-	
 
 }

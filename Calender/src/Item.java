@@ -68,12 +68,6 @@ public class Item implements Comparable<Item> {
 
 	}
 
-	/*
-	 * public String getTimeExact() { return timeExact; } public void
-	 * setTimeExcact(String timeExact) { this.timeExact = timeExact; }
-	 */
-
-
 	@Override
 	public int compareTo(Item o) {
 		// TODO Auto-generated method stub
