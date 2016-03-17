@@ -109,13 +109,13 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblHeadline_2 = new JLabel("");
 		lblHeadline_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblHeadline_2.setBounds(1273, 385, 550, 20);
+		lblHeadline_2.setBounds(1273, 385, 550, 25);
 		contentPane.add(lblHeadline_2);
 		lblHeadline_2.setText(a.getInfo().get(1).getTitle().toString());
 		
 		JLabel lblTime_3 = new JLabel("");
 		lblTime_3.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblTime_3.setBounds(1273, 415, 174, 20);
+		lblTime_3.setBounds(1273, 419, 174, 20);
 		contentPane.add(lblTime_3);
 		lblTime_3.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
 		
@@ -137,25 +137,25 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblHeadNextDate_1 = new JLabel("");
 		lblHeadNextDate_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblHeadNextDate_1.setBounds(1280, 741, 550, 16);
+		lblHeadNextDate_1.setBounds(1273, 754, 550, 25);
 		contentPane.add(lblHeadNextDate_1);
 		lblHeadNextDate_1.setText(a.getInfo().get(2).getTitle().toString());
 		
 		JLabel lblTimeNextDate_1 = new JLabel("");
 		lblTimeNextDate_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblTimeNextDate_1.setBounds(1273, 779, 174, 20);
+		lblTimeNextDate_1.setBounds(1273, 789, 174, 20);
 		contentPane.add(lblTimeNextDate_1);
 		lblTimeNextDate_1.setText(a.getInfo().get(2).getTimeStart().toString()+"-"+a.getInfo().get(2).getTimeEnd().toString());
 		
 		JLabel lblHeadNextDate_2 = new JLabel("");
 		lblHeadNextDate_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblHeadNextDate_2.setBounds(1273, 847, 550, 20);
+		lblHeadNextDate_2.setBounds(1273, 844, 550, 20);
 		contentPane.add(lblHeadNextDate_2);
 		lblHeadNextDate_2.setText(a.getInfo().get(3).getTitle().toString());
 		
 		JLabel lblTimeNextDate_2 = new JLabel("");
 		lblTimeNextDate_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
-		lblTimeNextDate_2.setBounds(1273, 895, 174, 20);
+		lblTimeNextDate_2.setBounds(1273, 879, 174, 20);
 		contentPane.add(lblTimeNextDate_2);
 		lblTimeNextDate_2.setText(a.getInfo().get(3).getTimeStart().toString()+"-"+a.getInfo().get(3).getTimeEnd().toString());
 		
