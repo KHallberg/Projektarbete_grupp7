@@ -81,6 +81,8 @@ public class RSS_new {
 					time = time.trim();
 					// System.out.println("time: "+time.length());
 					int j = time.indexOf("</strong>");
+					int placeStop = time.indexOf("<br /><strong>", time.indexOf("<br /><strong>") + 1);
+					System.out.println(placeStop);
 					// System.out.println("length: "+ j);
 					try {
 						if (time.length() > 100) {
@@ -91,7 +93,7 @@ public class RSS_new {
 							item.setTimeStart(timeStart);
 							String timeEnd = time.substring(j + 43, j + 48);
 							item.setTimeEnd(timeEnd);
-							String place = time.substring(j + 43, j + 48);
+							String place = time.substring(j + 81, placeStop);
 							item.setPlace(place);
 
 						}
