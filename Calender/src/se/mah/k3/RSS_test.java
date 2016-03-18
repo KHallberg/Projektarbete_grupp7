@@ -20,32 +20,18 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class RSS_new {
-	
-	private Kalender_v2 gui;
-	public RSS_new(Kalender_v2 gui){
-		this.gui = gui;
-		itemList = new ArrayList<Item>();
-		Item itemtest = new Item();
-		itemtest.setTitle("rr");
-		
-		
-	}
-	
+public class RSS_test {
 
 	public ArrayList<Item> itemList;
 
 	public ArrayList<Item> getInfo() {
 
-		
+		itemList = new ArrayList<Item>();
 
 		URL inputFile = null;
-		//File inputFile = null;
 		try {
 			inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
-			//inputFile = new File("rss/rss.xml");
-		//} catch (MalformedURLException e2) {
-		}catch (Exception e2){
+		} catch (MalformedURLException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		} // läser
@@ -60,13 +46,12 @@ public class RSS_new {
 			dBuilder = dbFactory.newDocumentBuilder();
 		} catch (ParserConfigurationException e1) {
 			// TODO Auto-generated catch block
-			gui.printError(e1.getMessage());
-			//e1.printStacekTrace();
+			e1.printStackTrace();
 		}
 
 		Document doc = null;
 		try {
-		doc = (Document) dBuilder.parse(inputFile.toString());
+			doc = (Document) dBuilder.parse(inputFile.toString());
 			// doc = (Document) dBuilder.parse(inputFile);
 		} catch (SAXException | IOException e) {
 			// TODO Auto-generated catch block

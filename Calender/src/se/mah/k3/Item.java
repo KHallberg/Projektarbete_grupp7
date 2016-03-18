@@ -5,13 +5,13 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Item implements Comparable<Item> {
-	private String description;
-	private String title;
+	private String description="test";
+	private String title="test";
 	// private Date time;
 	private Date timeExact;
 	private String timeStart;
 	private String timeEnd;
-	private String place;
+	private String place="test";
 
 	public String getPlace() {
 		return place;
