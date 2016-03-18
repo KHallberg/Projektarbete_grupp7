@@ -3,7 +3,7 @@ import java.util.Calendar;
 
 public class TimeAndDate {
 	
-	public static String[] strDays = new String[] {"Lördag" ,"Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag",
+	public static String[] strDays = new String[] {"LÃ¶rdag" ,"SÃ¶ndag", "MÃ¥ndag", "Tisdag", "Onsdag", "Torsdag",
 			    "Fredag"};
 	  
 	public static String[] strMonths = new String[] { "Januari", "Februari", "Mars", "April", "Maj",
@@ -24,6 +24,7 @@ public class TimeAndDate {
 				Calendar cal = Calendar.getInstance();
 				int hour = cal.get(cal.HOUR_OF_DAY);
 				int minute = cal.get(cal.MINUTE);
+				int second = cal.get(cal.SECOND);
 				int weekday = cal.get(cal.DAY_OF_WEEK);
 				int date = cal.get(cal.DATE);
 				int month = cal.get(cal.MONTH);
