@@ -85,7 +85,7 @@ public class Kalender_v2 extends JFrame {
 		lblHeadline.setForeground(Color.BLACK);
 		lblHeadline.setBounds(69, 324, 800, 50);
 		contentPane.add(lblHeadline);
-		//lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
+		lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
 		//lblHeadline.setText("hejhej");
 		
 		JLabel lblTime_1 = new JLabel("");
