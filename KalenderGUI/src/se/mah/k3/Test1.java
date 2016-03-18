@@ -1,3 +1,4 @@
+package se.mah.k3;
 import java.awt.BorderLayout;
 
 import java.awt.Dimension;
@@ -15,7 +16,7 @@ import javax.swing.JTextPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 
-public class KalenderGUI extends JFrame {
+public class Test1 extends JFrame {
 
 	private JPanel contentPane;
 
@@ -26,7 +27,7 @@ public class KalenderGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					KalenderGUI frame = new KalenderGUI();
+					Test1 frame = new Test1();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +39,7 @@ public class KalenderGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public KalenderGUI() 
+	public Test1() 
 	{
 		setBackground(Color.GRAY);Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	double width = screenSize.getWidth();
@@ -101,7 +102,7 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
-		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Kalendersk\u00E4rm_clean.png")));
+		lblNewLabel.setIcon(new ImageIcon(Test1.class.getResource("/GUIBackground/Kalendersk\u00E4rm_clean.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
 		
