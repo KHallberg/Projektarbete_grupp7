@@ -25,6 +25,8 @@ public class RSS_new {
 	private Kalender_v2 gui;
 	public RSS_new(Kalender_v2 gui){
 		this.gui = gui;
+		itemList = new ArrayList<Item>();
+		itemList.add(new Item());
 	}
 	
 
@@ -32,7 +34,7 @@ public class RSS_new {
 
 	public ArrayList<Item> getInfo() {
 
-		itemList = new ArrayList<Item>();
+		
 
 		URL inputFile = null;
 		//File inputFile = null;
