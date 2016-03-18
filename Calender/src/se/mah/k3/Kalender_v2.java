@@ -94,10 +94,13 @@ public class Kalender_v2 extends JFrame {
 		lblTime_1.setBounds(116, 410, 200, 16);
 		contentPane.add(lblTime_1);
 		try {
-			lblTime_1.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
+			String s1 = a.getInfo().get(1).getTimeStart().toString();
+			//String s2 = a.getInfo().get(1).getTimeEnd().toString();
+			String s2 ="S2";
+			lblTime_1.setText(s1+"-"+s2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			printError(e.getMessage());
+			printError("fel"+e.getMessage() + e.toString());
 		}
 		//lblTime_1.setText("hejhej");
 		
