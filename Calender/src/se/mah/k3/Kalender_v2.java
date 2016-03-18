@@ -94,8 +94,8 @@ public class Kalender_v2 extends JFrame {
 		lblTime_1.setBounds(116, 410, 200, 16);
 		contentPane.add(lblTime_1);
 		try {
-			if (a.getInfo().size()>1){
-			String s1 = a.getInfo().get(1).getTitle().toString();
+			if (a.getInfo().size()>=0){
+			String s1 = a.getInfo().get(0).getTitle().toString();
 			//String s2 = a.getInfo().get(1).getTimeEnd().toString();
 			String s2 ="S2";
 			printError("noError");
