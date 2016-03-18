@@ -34,11 +34,11 @@ public class RSS_new {
 
 		itemList = new ArrayList<Item>();
 
-		//URL inputFile = null;
-		File inputFile = null;
+		URL inputFile = null;
+		//File inputFile = null;
 		try {
-			//inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
-			inputFile = new File("rss/rss.xml");
+			inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
+			//inputFile = new File("rss/rss.xml");
 		//} catch (MalformedURLException e2) {
 		}catch (Exception e2){
 			// TODO Auto-generated catch block
@@ -55,14 +55,14 @@ public class RSS_new {
 			dBuilder = dbFactory.newDocumentBuilder();
 		} catch (ParserConfigurationException e1) {
 			// TODO Auto-generated catch block
-			//gui.printError(e1.getText());
+			gui.printError(e1.getMessage());
 			//e1.printStacekTrace();
 		}
 
 		Document doc = null;
 		try {
-			//doc = (Document) dBuilder.parse(inputFile.toString());
-			 doc = (Document) dBuilder.parse(inputFile);
+		doc = (Document) dBuilder.parse(inputFile.toString());
+			// doc = (Document) dBuilder.parse(inputFile);
 		} catch (SAXException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -47,7 +47,7 @@ public class Kalender_v2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Kalender_v2() {
-		RSS_test a = new RSS_test();
+		RSS_new a = new RSS_new(this);
 		
 		setBackground(Color.GRAY);Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	double width = screenSize.getWidth();
@@ -93,7 +93,12 @@ public class Kalender_v2 extends JFrame {
 		lblTime_1.setForeground(Color.BLACK);
 		lblTime_1.setBounds(116, 410, 200, 16);
 		contentPane.add(lblTime_1);
-		lblTime_1.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
+		try {
+			lblTime_1.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			printError(e.getMessage());
+		}
 		//lblTime_1.setText("hejhej");
 		
 		JLabel lblPlace = new JLabel("PLACE");
