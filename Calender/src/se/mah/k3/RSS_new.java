@@ -26,7 +26,10 @@ public class RSS_new {
 	public RSS_new(Kalender_v2 gui){
 		this.gui = gui;
 		itemList = new ArrayList<Item>();
-		itemList.add(new Item());
+		Item itemtest = new Item();
+		itemtest.setTitle("rr");
+		
+		
 	}
 	
 
