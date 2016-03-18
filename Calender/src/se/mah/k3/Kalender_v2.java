@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -25,6 +26,9 @@ public class Kalender_v2 extends JFrame {
 	private static JLabel lblTime;
 	private static JLabel lblDate;
 	private JTextArea error;
+	private JLabel lblPlace;
+	private JLabel lblTime_1;
+	private int testNbr=0;
 	
 
 	/**
@@ -88,12 +92,12 @@ public class Kalender_v2 extends JFrame {
 		//lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
 		//lblHeadline.setText("hejhej");
 		
-		JLabel lblTime_1 = new JLabel("");
+		lblTime_1 = new JLabel("");
 		lblTime_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblTime_1.setForeground(Color.BLACK);
 		lblTime_1.setBounds(116, 410, 200, 16);
 		contentPane.add(lblTime_1);
-		try {
+		/*try {
 			//if (a.getInfo().size()>=0){
 			String s1 = a.getInfo().get(0).getTitle().toString();
 			//String s2 = a.getInfo().get(1).getTimeEnd().toString();
@@ -105,10 +109,10 @@ public class Kalender_v2 extends JFrame {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			printError("fel"+e.getMessage() + e.toString());
-		}
+		}*/
 		//lblTime_1.setText("hejhej");
 		
-		JLabel lblPlace = new JLabel("PLACE");
+		lblPlace = new JLabel("PLACE");
 		lblPlace.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblPlace.setBounds(136, 439, 607, 20);
 		contentPane.add(lblPlace);
@@ -221,5 +225,18 @@ public class Kalender_v2 extends JFrame {
 	}
 	public void printError(String s){
 		error.setText(s);
+	}
+	
+	//Lägger ny metod här som kan uppdatera place
+	public void setPlace(String place){
+		lblPlace.setText(place);
+	}
+
+  //Så här anropas GUI en gång var 5:e sekund och så skall allt uppdateras kanse skall gå långsammare men  för test.
+	public void newListCreated(ArrayList<Item> itemList) {
+		// TODO Auto-generated method stub
+		setPlace(itemList.get(1).getPlace().toString()+ testNbr);
+		testNbr= testNbr+1;
+		
 	}
 }
