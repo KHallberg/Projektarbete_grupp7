@@ -1,3 +1,4 @@
+package se.mah.k3;
 import java.awt.BorderLayout;
 import java.util.*;
 import java.awt.EventQueue;

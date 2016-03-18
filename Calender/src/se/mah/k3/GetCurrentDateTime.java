@@ -1,3 +1,4 @@
+package se.mah.k3;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.text.DateFormat;

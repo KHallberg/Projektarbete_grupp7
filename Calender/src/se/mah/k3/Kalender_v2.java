@@ -1,3 +1,4 @@
+package se.mah.k3;
 import java.awt.BorderLayout;
 
 import java.awt.Dimension;
@@ -16,7 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 
-public class KalenderGUI extends JFrame {
+public class Kalender_v2 extends JFrame {
 
 	private JPanel contentPane;
 	public TimeAndDate myTimeAndDate;
@@ -31,7 +32,7 @@ public class KalenderGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					KalenderGUI frame = new KalenderGUI();
+					Kalender_v2 frame = new Kalender_v2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +44,7 @@ public class KalenderGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public KalenderGUI() {
+	public Kalender_v2() {
 		RSS_new a = new RSS_new();
 		
 		setBackground(Color.GRAY);Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -167,7 +168,7 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
-		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Calenderscreen_clean_new.png")));
+		lblNewLabel.setIcon(new ImageIcon(Kalender_v2.class.getResource("/GUIBackground/Calenderscreen_clean_new.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
 		

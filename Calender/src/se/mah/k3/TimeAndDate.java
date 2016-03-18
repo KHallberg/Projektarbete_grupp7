@@ -1,3 +1,4 @@
+package se.mah.k3;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
@@ -9,8 +10,8 @@ public class TimeAndDate {
 	public static String[] strMonths = new String[] { "Januari", "Februari", "Mars", "April", "Maj",
 			    "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"  };
 	
-	private KalenderGUI clockGUI;
-	public TimeAndDate(KalenderGUI MyTestGUI) {
+	private Kalender_v2 clockGUI;
+	public TimeAndDate(Kalender_v2 MyTestGUI) {
 		this.clockGUI = MyTestGUI;
 		
 		new ClockThread().start();
@@ -30,8 +31,8 @@ public class TimeAndDate {
 				int month = cal.get(cal.MONTH);
 				
 				DecimalFormat correctTime = new DecimalFormat("00");
-				KalenderGUI.setTimeOnLabel(correctTime.format(hour) + ":" + correctTime.format(minute));
-				KalenderGUI.setDateOnLabel(strDays[weekday] + " " + date + " " + strMonths[month]);
+				Kalender_v2.setTimeOnLabel(correctTime.format(hour) + ":" + correctTime.format(minute));
+				Kalender_v2.setDateOnLabel(strDays[weekday] + " " + date + " " + strMonths[month]);
 				//clockGUI.setTimeOnLabel(hour + ":" + minute + ":" + second);
 				
 				try {
