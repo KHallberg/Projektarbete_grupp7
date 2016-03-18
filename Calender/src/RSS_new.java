@@ -125,8 +125,9 @@ public class RSS_new {
 			System.out.println("Start:  " + i.getTimeStart().toString());
 			System.out.println("Slut:  " + i.getTimeEnd().toString());
 			System.out.println("Plats:  " + i.getPlace().toString());
+			*/
 			System.out.println("Beskrivning:  " + i.getDescription().toString() + "\n");
-*/
+
 		}
 		return itemList;
 
