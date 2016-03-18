@@ -16,6 +16,7 @@ import javax.swing.JTextPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
+import javax.swing.JTextArea;
 
 public class Kalender_v2 extends JFrame {
 
@@ -23,6 +24,7 @@ public class Kalender_v2 extends JFrame {
 	public TimeAndDate myTimeAndDate;
 	private static JLabel lblTime;
 	private static JLabel lblDate;
+	private JTextArea error;
 	
 
 	/**
@@ -45,7 +47,7 @@ public class Kalender_v2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Kalender_v2() {
-		RSS_new a = new RSS_new();
+		RSS_test a = new RSS_test();
 		
 		setBackground(Color.GRAY);Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	double width = screenSize.getWidth();
@@ -59,6 +61,10 @@ public class Kalender_v2 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		error = new JTextArea();
+		error.setBounds(196, 724, 657, 209);
+		contentPane.add(error);
 		
 		lblDate = new JLabel("DATE");
 		lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -79,7 +85,7 @@ public class Kalender_v2 extends JFrame {
 		lblHeadline.setForeground(Color.BLACK);
 		lblHeadline.setBounds(69, 324, 800, 50);
 		contentPane.add(lblHeadline);
-		lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
+		//lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
 		//lblHeadline.setText("hejhej");
 		
 		JLabel lblTime_1 = new JLabel("");
@@ -87,14 +93,14 @@ public class Kalender_v2 extends JFrame {
 		lblTime_1.setForeground(Color.BLACK);
 		lblTime_1.setBounds(116, 410, 200, 16);
 		contentPane.add(lblTime_1);
-		lblTime_1.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
+		//lblTime_1.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
 		//lblTime_1.setText("hejhej");
 		
 		JLabel lblPlace = new JLabel("PLACE");
 		lblPlace.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblPlace.setBounds(136, 439, 607, 20);
 		contentPane.add(lblPlace);
-		lblPlace.setText(a.getInfo().get(1).getPlace().toString());
+		//lblPlace.setText(a.getInfo().get(1).getPlace().toString());
 		//lblPlace.setText("hejhej");
 		
 		JTextPane txtpnDetails = new JTextPane();
@@ -103,21 +109,21 @@ public class Kalender_v2 extends JFrame {
 		txtpnDetails.setFont(new Font("Futura LT", Font.PLAIN, 22));
 		txtpnDetails.setBounds(116, 536, 968, 425);
 		contentPane.add(txtpnDetails);
-		txtpnDetails.setText(a.getInfo().get(1).getDescription().toString());
+		//txtpnDetails.setText(a.getInfo().get(1).getDescription().toString());
 		//txtpnDetails.setText("hejhej");
 		
 		JLabel lblHeadline_1 = new JLabel("");
 		lblHeadline_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblHeadline_1.setBounds(1273, 300, 550, 20);
 		contentPane.add(lblHeadline_1);
-		lblHeadline_1.setText(a.getInfo().get(1).getTitle().toString());
+		//lblHeadline_1.setText(a.getInfo().get(1).getTitle().toString());
 		//lblHeadline_1.setText("hejhej");
 		
 		JLabel lblTime_2 = new JLabel("TIME");
 		lblTime_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblTime_2.setBounds(1273, 335, 174, 20);
 		contentPane.add(lblTime_2);
-		lblTime_2.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
+		//lblTime_2.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
 		//lblTime_2.setText("hejhej");
 
 		
@@ -125,14 +131,14 @@ public class Kalender_v2 extends JFrame {
 		lblHeadline_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblHeadline_2.setBounds(1273, 385, 550, 25);
 		contentPane.add(lblHeadline_2);
-		lblHeadline_2.setText(a.getInfo().get(0).getTitle().toString());
+		//lblHeadline_2.setText(a.getInfo().get(0).getTitle().toString());
 		//lblHeadline_2.setText("hejhej");
 		
 		JLabel lblTime_3 = new JLabel("");
 		lblTime_3.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblTime_3.setBounds(1273, 419, 174, 20);
 		contentPane.add(lblTime_3);
-		lblTime_3.setText(a.getInfo().get(0).getTimeStart().toString()+"-"+a.getInfo().get(0).getTimeEnd().toString());
+		//lblTime_3.setText(a.getInfo().get(0).getTimeStart().toString()+"-"+a.getInfo().get(0).getTimeEnd().toString());
 		//lblTime_3.setText("hejhej");
 
 		
@@ -156,7 +162,7 @@ public class Kalender_v2 extends JFrame {
 		lblHeadNextDate_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblHeadNextDate_1.setBounds(1273, 754, 550, 25);
 		contentPane.add(lblHeadNextDate_1);
-		lblHeadNextDate_1.setText(a.getInfo().get(2).getTitle().toString());
+		//lblHeadNextDate_1.setText(a.getInfo().get(2).getTitle().toString());
 		//lblHeadNextDate_1.setText("hejhej");
 
 		
@@ -164,7 +170,7 @@ public class Kalender_v2 extends JFrame {
 		lblTimeNextDate_1.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblTimeNextDate_1.setBounds(1273, 789, 174, 20);
 		contentPane.add(lblTimeNextDate_1);
-		lblTimeNextDate_1.setText(a.getInfo().get(2).getTimeStart().toString()+"-"+a.getInfo().get(2).getTimeEnd().toString());
+		//lblTimeNextDate_1.setText(a.getInfo().get(2).getTimeStart().toString()+"-"+a.getInfo().get(2).getTimeEnd().toString());
 		//lblTimeNextDate_1.setText("hejhej");
 
 		
@@ -172,7 +178,7 @@ public class Kalender_v2 extends JFrame {
 		lblHeadNextDate_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblHeadNextDate_2.setBounds(1273, 844, 550, 20);
 		contentPane.add(lblHeadNextDate_2);
-		lblHeadNextDate_2.setText(a.getInfo().get(3).getTitle().toString());
+		//lblHeadNextDate_2.setText(a.getInfo().get(3).getTitle().toString());
 		//lblHeadNextDate_2.setText("hejhej");
 
 		
@@ -180,7 +186,7 @@ public class Kalender_v2 extends JFrame {
 		lblTimeNextDate_2.setFont(new Font("Futura LT", Font.PLAIN, 20));
 		lblTimeNextDate_2.setBounds(1273, 879, 174, 20);
 		contentPane.add(lblTimeNextDate_2);
-		lblTimeNextDate_2.setText(a.getInfo().get(3).getTimeStart().toString()+"-"+a.getInfo().get(3).getTimeEnd().toString());
+		//lblTimeNextDate_2.setText(a.getInfo().get(3).getTimeStart().toString()+"-"+a.getInfo().get(3).getTimeEnd().toString());
 		//lblTimeNextDate_2.setText("hejhej");
 
 		
@@ -199,5 +205,8 @@ public class Kalender_v2 extends JFrame {
 	
 	public static void setDateOnLabel(String date){
 		lblDate.setText(date);
+	}
+	public void printError(String s){
+		error.setText(s);
 	}
 }

@@ -33,7 +33,7 @@ public class TestGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public TestGUI() {
-		RSS_new a = new RSS_new();
+		RSS_test a = new RSS_test();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

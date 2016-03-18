@@ -41,7 +41,7 @@ public class KalenderGUI_test extends JFrame {
 	 */
 	public KalenderGUI_test() 
 	{
-		RSS_new a = new RSS_new();
+		RSS_test a = new RSS_test();
 		setBackground(Color.GRAY);Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	double width = screenSize.getWidth();
 	double height = screenSize.getHeight();

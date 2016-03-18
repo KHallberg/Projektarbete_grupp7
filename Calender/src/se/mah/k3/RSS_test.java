@@ -20,13 +20,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class RSS_new {
-	
-	private Kalender_v2 gui;
-	public RSS_new(Kalender_v2 gui){
-		this.gui = gui;
-	}
-	
+public class RSS_test {
 
 	public ArrayList<Item> itemList;
 
@@ -52,8 +46,7 @@ public class RSS_new {
 			dBuilder = dbFactory.newDocumentBuilder();
 		} catch (ParserConfigurationException e1) {
 			// TODO Auto-generated catch block
-			//gui.printError(e1.getText());
-			//e1.printStacekTrace();
+			e1.printStackTrace();
 		}
 
 		Document doc = null;
