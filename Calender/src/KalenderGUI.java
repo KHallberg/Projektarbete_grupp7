@@ -167,7 +167,7 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
-		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Kalendersk\u00E4rm_clean_new.png")));
+		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Calenderscreen_clean_new.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
 		
