@@ -97,6 +97,7 @@ public class Kalender_v2 extends JFrame {
 			String s1 = a.getInfo().get(1).getTimeStart().toString();
 			//String s2 = a.getInfo().get(1).getTimeEnd().toString();
 			String s2 ="S2";
+			printError("noError");
 			lblTime_1.setText(s1+"-"+s2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -115,7 +116,7 @@ public class Kalender_v2 extends JFrame {
 		txtpnDetails.setEditable(false);
 		txtpnDetails.setBackground(new Color(240, 241, 241));
 		txtpnDetails.setFont(new Font("Futura LT", Font.PLAIN, 22));
-		txtpnDetails.setBounds(116, 536, 968, 425);
+		txtpnDetails.setBounds(116, 536, 968, 173);
 		contentPane.add(txtpnDetails);
 		//txtpnDetails.setText(a.getInfo().get(1).getDescription().toString());
 		//txtpnDetails.setText("hejhej");
@@ -197,6 +198,7 @@ public class Kalender_v2 extends JFrame {
 		//lblTimeNextDate_2.setText(a.getInfo().get(3).getTimeStart().toString()+"-"+a.getInfo().get(3).getTimeEnd().toString());
 		//lblTimeNextDate_2.setText("hejhej");
 
+		
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
