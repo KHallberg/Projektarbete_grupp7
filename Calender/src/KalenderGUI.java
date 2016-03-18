@@ -51,8 +51,8 @@ public class KalenderGUI extends JFrame {
 	double height = screenSize.getHeight();
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setBounds(0, 0, (int)width, (int)height);
-		this.setUndecorated(true);
+		this.setBounds(0, 0, 640, 480);
+		//this.setUndecorated(true);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -167,7 +167,7 @@ public class KalenderGUI extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setFont(new Font("Futura LT", Font.PLAIN, 13));
-		lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Calenderscreen_clean_new.png")));
+		//lblNewLabel.setIcon(new ImageIcon(KalenderGUI.class.getResource("/GUIBackground/Calenderscreen_clean_new.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
 		
