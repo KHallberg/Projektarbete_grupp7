@@ -85,7 +85,7 @@ public class Kalender_v2 extends JFrame {
 		lblHeadline.setForeground(Color.BLACK);
 		lblHeadline.setBounds(69, 324, 800, 50);
 		contentPane.add(lblHeadline);
-		lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
+		//lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
 		//lblHeadline.setText("hejhej");
 		
 		JLabel lblTime_1 = new JLabel("");
@@ -93,7 +93,7 @@ public class Kalender_v2 extends JFrame {
 		lblTime_1.setForeground(Color.BLACK);
 		lblTime_1.setBounds(116, 410, 200, 16);
 		contentPane.add(lblTime_1);
-		//lblTime_1.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
+		lblTime_1.setText(a.getInfo().get(1).getTimeStart().toString()+"-"+a.getInfo().get(1).getTimeEnd().toString());
 		//lblTime_1.setText("hejhej");
 		
 		JLabel lblPlace = new JLabel("PLACE");
