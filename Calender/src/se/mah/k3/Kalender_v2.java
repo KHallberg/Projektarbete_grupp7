@@ -78,7 +78,7 @@ public class Kalender_v2 extends JFrame {
 		
 		lblDate = new JLabel("DATE");
 		lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblDate.setFont(new Font("Futura LT", Font.PLAIN, 48));
+		lblDate.setFont(new Font("Futura LT", Font.PLAIN, 38));
 		lblDate.setForeground(Color.WHITE);
 		lblDate.setBounds(677, 121, 461, 67);
 		contentPane.add(lblDate);
