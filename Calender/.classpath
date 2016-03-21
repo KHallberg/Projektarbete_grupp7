@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="src/lib/httpcore-4.3.2.jar"/>
 	<classpathentry kind="lib" path="src/lib/httpmime-4.3.3.jar"/>
 	<classpathentry kind="lib" path="src/lib/xmlpull-xpp3-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="Lib/dom4j-1.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
