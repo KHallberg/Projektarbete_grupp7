@@ -25,15 +25,17 @@ public class Parser {
 		String title = "";
 
 		String xml = parser.getXmlFromUrl(RSSurl); // getting XML
+		System.out.println("xml: "+xml.length());
 		if (xml != null) {
 			Document doc = parser.getDomElement(xml); // getting DOM element
 			// Get departure and arrival time
+			System.out.println("NAME"+doc);
 			NodeList nl = doc.getElementsByTagName("item");
 			// looping through all item nodes <item>
+			System.out.println("length: " + nl.getLength());
 			for (int i = 0; i < nl.getLength(); i++) {
 				//Item item = new Item();
-				Element e = (Element) nl.item(i);
-				
+				Element e = (Element) nl.item(i);	
 				title = parser.getValue(e, "title");
 				
 			}

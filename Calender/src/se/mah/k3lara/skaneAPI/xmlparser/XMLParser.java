@@ -61,10 +61,13 @@ public class XMLParser {
 		        is.setCharacterStream(new StringReader(xml));
 		        doc = db.parse(is); 
 			} catch (ParserConfigurationException e) {
+				e.printStackTrace();
 				return null;
 			} catch (SAXException e) {
+				e.printStackTrace();
 	            return null;
 			} catch (IOException e) {
+				e.printStackTrace();
 				return null;
 			}
 	        return doc;
