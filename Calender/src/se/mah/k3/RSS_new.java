@@ -31,7 +31,8 @@ public class RSS_new {
 		itemList = new ArrayList<Item>();
 		Item itemtest = new Item();
 		itemtest.setTitle("rr");
-		
+		//String certificatesTrustStorePath = "<JAVA HOME>/jre/lib/security/cacerts";
+		//System.setProperty("javax.net.ssl.trustStore", certificatesTrustStorePath);
 		//Ok starta tråden
 		Thread t = new SearchThread();
 		t.start();
@@ -162,7 +163,8 @@ public class RSS_new {
 		public void run() {
 			// TODO Auto-generated method stub
 			while(true){
-				
+				gui.printError("Round: " +i );
+				i++;
 				//Stoppade allt här i stället så tråden driver det.-
 				try {
 					inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
@@ -171,6 +173,7 @@ public class RSS_new {
 				}catch (Exception e2){
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
+					gui.printError("Error"+e2.getMessage() +i );
 				} // lÃ¤ser
 					// frÃ¥n
 					// en
@@ -191,9 +194,10 @@ public class RSS_new {
 				try {
 				doc = (Document) dBuilder.parse(inputFile.toString());
 					// doc = (Document) dBuilder.parse(inputFile);
-				} catch (SAXException | IOException e) {
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					gui.printError("Error"+e.getMessage() +i );
 				}
 				((Node) doc.getDocumentElement()).normalize();
 
@@ -237,6 +241,7 @@ public class RSS_new {
 
 								}
 							} catch (Exception e) {
+								gui.printError("Error"+e.getMessage() +i );
 							}
 
 							String description = eElement.getElementsByTagName("description").item(0).getTextContent();
@@ -251,6 +256,7 @@ public class RSS_new {
 				} catch (XPathExpressionException e11) {
 					// TODO Auto-generated catch block
 					e11.printStackTrace();
+					gui.printError("Error"+e11.getMessage() +i );
 				}
 				
 				for (Item i : itemList) {
@@ -264,6 +270,7 @@ public class RSS_new {
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+					gui.printError("Error"+e.getMessage() +i );
 				} 
 			}
 			

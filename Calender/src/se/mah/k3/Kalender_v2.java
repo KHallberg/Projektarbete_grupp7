@@ -18,16 +18,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
 
 public class Kalender_v2 extends JFrame {
 
 	private JPanel contentPane;
 	public TimeAndDate myTimeAndDate;
-	private static JLabel lblTime;
-	private static JLabel lblDate;
-	private JTextArea error;
+	private JLabel lblTime;
+	private JLabel lblDate;
+	private JTextArea errorField;
 	private JLabel lblPlace;
 	private JLabel lblTime_1;
+	private RSS_new a;
 	private int testNbr=0;
 	
 
@@ -51,7 +53,7 @@ public class Kalender_v2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Kalender_v2() {
-		RSS_new a = new RSS_new(this);
+		
 		
 		setBackground(Color.GRAY);Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	double width = screenSize.getWidth();
@@ -66,9 +68,13 @@ public class Kalender_v2 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		error = new JTextArea();
-		error.setBounds(196, 724, 657, 209);
-		contentPane.add(error);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(196, 724, 657, 209);
+		contentPane.add(scrollPane);
+		
+		errorField = new JTextArea();
+		scrollPane.setViewportView(errorField);
+		errorField.setRows(20);
 		
 		lblDate = new JLabel("DATE");
 		lblDate.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -212,19 +218,20 @@ public class Kalender_v2 extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(Kalender_v2.class.getResource("/GUIBackground/Calenderscreen_clean_new.png")));
 		lblNewLabel.setBounds(0, 0, (int)width, (int)height);
 		contentPane.add(lblNewLabel);
-		
-		myTimeAndDate = new TimeAndDate(this);	
+		printError("Version 14");
+		//myTimeAndDate = new TimeAndDate(this);	
+		a = new RSS_new(this);
 		
 	}
-	public static void setTimeOnLabel(String time){
+	public void setTimeOnLabel(String time){
 		lblTime.setText(time);
 	}
 	
-	public static void setDateOnLabel(String date){
+	public void setDateOnLabel(String date){
 		lblDate.setText(date);
 	}
 	public void printError(String s){
-		error.setText(s);
+		errorField.append(s+"\n");
 	}
 	
 	//Lägger ny metod här som kan uppdatera place
@@ -235,8 +242,14 @@ public class Kalender_v2 extends JFrame {
   //Så här anropas GUI en gång var 5:e sekund och så skall allt uppdateras kanse skall gå långsammare men  för test.
 	public void newListCreated(ArrayList<Item> itemList) {
 		// TODO Auto-generated method stub
-		setPlace(itemList.get(1).getPlace().toString()+ testNbr);
-		testNbr= testNbr+1;
+		try {
+			setPlace("try" +itemList.get(1).getPlace().toString()+ testNbr);
+			printError("try1"+itemList.get(1).getPlace().toString()+ testNbr);
+			testNbr= testNbr+1;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			printError("ERROR"+e.toString()+e.getMessage());
+		}
 		
 	}
 }
