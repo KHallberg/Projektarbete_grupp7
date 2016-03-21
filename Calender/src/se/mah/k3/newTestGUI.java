@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import se.mah.k3lara.skaneAPI.control.Constants;
+import se.mah.k3lara.skaneAPI.xmlparser.Parser;
+
 public class newTestGUI extends JFrame {
 
 	private JPanel contentPane;
@@ -37,6 +40,8 @@ public class newTestGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		
+		System.out.println(Parser.getItemTitle(Constants.baseURL));
 	}
 
 }

@@ -53,9 +53,10 @@ public class Constants {
 	 * Build the StationresultURL
 	 * @param startStationNumber from skånetrafiken
 	 * */
+	/*
 	public static String getStationResultURL(Station station){
 		String url = baseURL + stationResultURL +station.getStationNbr();
 		return url;
 	}
-	
+	*/
 }

@@ -20,7 +20,7 @@ import se.mah.k3lara.skaneAPI.model.Station;
 
 public class Parser {
 	
-	public String getItemTitle(String RSSurl) {
+	public static String getItemTitle(String RSSurl) {
 		XMLParser parser = new XMLParser();
 		String title = "";
 
@@ -34,7 +34,7 @@ public class Parser {
 				Item item = new Item();
 				Element e = (Element) nl.item(i);
 				
-				title = e.getElementsByTagName("title").item(i).getTextContent();
+				title = e.getElementsByTagName("title").item(i).toString();
 				item.setTitle(title);
 				
 			}
