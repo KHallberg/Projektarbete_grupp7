@@ -16,7 +16,7 @@ import javax.swing.JTextArea;
 public class staxTestGUI extends JFrame {
 
 	private JPanel contentPane;
-	private JTextArea txtrStaxtestgui;
+	public static JTextArea txtrStaxtestgui;
 
 	/**
 	 * Launch the application.

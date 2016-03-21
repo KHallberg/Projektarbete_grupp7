@@ -26,13 +26,14 @@ public class RSSFeedParser {
   static final String PUB_DATE = "pubDate";
   static final String GUID = "guid";
 
-  final URL url;
+  private URL url=null;
 
   public RSSFeedParser(String feedUrl) {
     try {
       this.url = new URL(feedUrl);
     } catch (MalformedURLException e) {
-      throw new RuntimeException(e);
+      //throw new RuntimeException(e);
+    	staxTestGUI.txtrStaxtestgui.append(e.toString());
     }
   }
 

@@ -67,8 +67,8 @@ public class Dom4JGUI extends JFrame {
 		
 		List<Node> nodes = document.selectNodes("//item" );
 		
-		for (Node node : nodes) {
-			txtrTesting.append("Title : " + node.selectSingleNode("title").getText());
+		for (int i = 0; i < nodes.size(); i++) {
+			txtrTesting.append("Title : " + nodes.get(i).selectSingleNode("title").getText());
           
 
            //System.out.println("Title : " + node.selectSingleNode("title").getText());
