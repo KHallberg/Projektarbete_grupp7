@@ -57,7 +57,7 @@ public class staxTestGUI extends JFrame {
 		
 		for (int i = 0; i < feed.getMessages().size(); i++) {
 			System.out.println(feed.getMessages().get(i));
-			txtrStaxtestgui.setText(feed.getMessages().get(i).toString());
+			txtrStaxtestgui.append(feed.getMessages().get(i).toString() + "\n");
 
 		}
 
