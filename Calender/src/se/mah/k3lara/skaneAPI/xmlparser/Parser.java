@@ -31,11 +31,10 @@ public class Parser {
 			NodeList nl = doc.getElementsByTagName("item");
 			// looping through all item nodes <item>
 			for (int i = 0; i < nl.getLength(); i++) {
-				Item item = new Item();
+				//Item item = new Item();
 				Element e = (Element) nl.item(i);
 				
-				title = e.getElementsByTagName("title").item(i).toString();
-				item.setTitle(title);
+				title = parser.getValue(e, "title");
 				
 			}
 		}
