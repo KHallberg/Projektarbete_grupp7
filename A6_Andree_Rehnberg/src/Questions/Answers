@@ -1,0 +1,79 @@
+1.	Malmö C - Lund C
+
+2.	?cmdaction=next&selPointFr=0|80000|0&selPointTo=0|81216|0&SequenceNo=10|0&NoOf=5
+
+3.	<Journeys> - Innehåller hela resultatlistan </Journeys> 
+	<Journey> - Refererar till en specifik resa </Journey>
+	<RouteLinks> - Innehåller en lista med de färdmedel resan kräver </RouteLinks>
+	<RouteLink> - Innehåller information ett specifikt fordons avresetid, anländningstid och hurvida resan är försenad eller ej </RouteLink>
+
+4.	<NoOfChanges></NoOfChanges> ligger under <Journey></Journey>
+
+5.	<RouteLinks> & <RouteLink> b.la.
+
+UML:
+Journey
+-depDateTime:Calendar
+-arrDateTime:Calendar
+-noOfChanges:String
+-lineOnFirstJourney:String
+-travelMinutes:String
+-timeToDeparture:String
+-noOfZones:String
+-lineTypeName:String
+-depTimeDeviation:String
+-arrTimeDeviation:String
+-startStation:Station
+-endStation:Station
++ Journey(startStation:Station, endStation:Station)
++ getDepDateTime():Calendar
++ setDepDateTime(depDateTime:Calendar):void
++ getArrDateTime():Calendar
++ setArrDateTime(arrTime:Calendar):void
++ getNoOfChanges():String
++ setNoOfChanges(number:String):void
++ getStartStation():Station
++ getEndStation():Station
++ getLineOnFirstJourney():String
++ setLineOnFirstJourney(lineOnFirstJourney:String):void
++ setTravelTime(travelMinutes:String):void
++ getTravelMinutes():String
++ getTimeToDeparture():String
++ setTimeToDeparture(timeToDeparture:String):void
++ getNoOfZones():String
++ setNoOfZones(noOfZones:String):void
++ getLineTypeName():String
++ setLineTypeName(lineTypeName:String):void
++ getDepTimeDeviation():String
++ setDepTimeDeviation(depTimeDeviation:String):void
++ getArrTimeDeviation():String
++ setArrTimeDeviation(arrTimeDeviation:String):void
++ setStartStation(startStation:Station):void
++ setEndStation(endStation:Station):void
+
+Journeys
+- journeys Journey: String []
++Journeys();
++addJourney(journey: Journey): void
++getJourneys(): String []
++clearJourneys(): void
+
+
+Station
+-stationNbr:String
+-stationName:String
+-latitude:double
+-longitude:double
++Station(stationNbr:String)
++Station(stationName:String, stationNbr:String)
++Station(stationName:String, stationNbr:String, latitude:String, longitude:String)
++getLatitude():double
++setLatitude(latitude:double):void
++getLongitude():double
++setLongitude(longitude:double):void
++getStationNbr():String
++getStationName():String
++toString():String
++equals(o:Object):boolean
++hashCode():int
++compareTo(another:Station):int
