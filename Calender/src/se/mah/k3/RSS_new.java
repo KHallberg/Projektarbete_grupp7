@@ -46,7 +46,7 @@ public class RSS_new {
 
 		// File inputFile = null;
 		try {
-			inputFile = new URL("https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
+			inputFile = new URL("http://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
 			// inputFile = new File("rss/rss.xml");
 			// } catch (MalformedURLException e2) {
 		} catch (Exception e2) {
