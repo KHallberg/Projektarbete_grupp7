@@ -26,7 +26,7 @@ import javax.swing.JScrollPane;
 public class Test1 extends JFrame {
 
 	private JPanel contentPane;
-	private String url="http://www.nasa.gov/rss/dyn/image_of_the_day.rss";
+	private String url="https://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/";
 	private JTextArea textArea;
 	/**
 	 * Launch the application.
