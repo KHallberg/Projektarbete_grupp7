@@ -33,7 +33,7 @@ public class TimeAndDate {
 				DecimalFormat correctTime = new DecimalFormat("00");
 				Kalender_v2.setTimeOnLabel(correctTime.format(hour) + ":" + correctTime.format(minute));
 				Kalender_v2.setDateOnLabel(strDays[weekday] + " " + date + " " + strMonths[month]);
-				clockGUI.setTimeOnLabel(hour + ":" + minute);
+				clockGUI.setTimeOnLabel(correctTime.format(hour) + ":" + correctTime.format(minute));
 				
 				try {
 					Thread.sleep(900);

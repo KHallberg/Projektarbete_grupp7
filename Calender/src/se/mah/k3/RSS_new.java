@@ -106,6 +106,8 @@ public class RSS_new {
 					// System.out.println("length: "+ j);
 					try {
 						if (time.length() > 100) {
+							String date = time.substring(j + 10 , j + 20);
+							item.setDate(date);
 							String timeExact = time.substring(j + 10, j + 30);
 							// System.out.println("Sub: "+timeExact);
 							item.setTimeExact(timeExact);
@@ -121,6 +123,8 @@ public class RSS_new {
 					}
 
 					String description = eElement.getElementsByTagName("description").item(0).getTextContent();
+					description = description.replaceAll("&nbsp;", "");
+					description  =  description.replaceAll("\\. ", "\\.\n\n");
 					item.setDescription(description);
 					// System.out.println("description: "+description);
 

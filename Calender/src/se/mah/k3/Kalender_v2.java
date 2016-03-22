@@ -30,6 +30,7 @@ public class Kalender_v2 extends JFrame {
 	private JLabel lblPlace;
 	private JLabel lblTime_1;
 	private RSS_new a;
+	private RSS_new agendaParser;
 	private int testNbr = 0;
 
 	/**
@@ -88,15 +89,15 @@ public class Kalender_v2 extends JFrame {
 		lblHeadline.setForeground(Color.BLACK);
 		lblHeadline.setBounds(116, 334, 968, 50);
 		contentPane.add(lblHeadline);
-		lblHeadline.setText(a.getInfo().get(1).getTitle().toString());
+		lblHeadline.setText(a.getInfo().get(0).getTitle().toString());
 		// lblHeadline.setText("hejhej");
 
 		lblTime_1 = new JLabel("");
 		lblTime_1.setFont(new Font("Futura LT", Font.PLAIN, 24));
 		lblTime_1.setForeground(Color.BLACK);
-		lblTime_1.setBounds(196, 414, 921, 28);
+		lblTime_1.setBounds(196, 412, 921, 35);
 		contentPane.add(lblTime_1);
-		lblTime_1.setText(a.getInfo().get(0).getTimeStart().toString() + " - " + a.getInfo().get(0).getTimeEnd().toString());
+		lblTime_1.setText(a.getInfo().get(0).getDate().toString() + "   " + a.getInfo().get(0).getTimeStart().toString() + " - " + a.getInfo().get(0).getTimeEnd().toString());
 		
 		/*
 		  try { //if (a.getInfo().size()>=0){ String s1 =
@@ -110,6 +111,7 @@ public class Kalender_v2 extends JFrame {
 		 
 
 		lblPlace = new JLabel("PLACE");
+		lblPlace.setForeground(Color.BLACK);
 		lblPlace.setFont(new Font("Futura LT", Font.PLAIN, 24));
 		lblPlace.setBounds(196, 446, 901, 34);
 		contentPane.add(lblPlace);
@@ -122,25 +124,25 @@ public class Kalender_v2 extends JFrame {
 		txtpnDetails.setFont(new Font("Futura LT", Font.PLAIN, 28));
 		txtpnDetails.setBounds(116, 536, 968, 422);
 		contentPane.add(txtpnDetails);
-		txtpnDetails.setText(a.getInfo().get(0).getDescription().toString());
+		txtpnDetails.setText(a.getInfo().get(4).getDescription().toString());
 		// txtpnDetails.setText("hejhej");
 
-		
-		for (int i = 0; i < 6; i ++){
+		for (int i = 0; i < 6; i++){
+			agendaParser = new RSS_new(this);
 			int distance = i * 100;
 			
 			JLabel lblHeadline_1 = new JLabel("");
 			lblHeadline_1.setFont(new Font("Futura LT", Font.BOLD, 24));
 			lblHeadline_1.setBounds(1273, 314 +  distance, 550, 35);
 			contentPane.add(lblHeadline_1);
-			lblHeadline_1.setText(a.getInfo().get(i).getTitle().toString());
+			lblHeadline_1.setText(agendaParser.getInfo().get(i).getTitle().toString());
 
 			JLabel lblTime_2 = new JLabel("TIME");
 			lblTime_2.setFont(new Font("Futura LT", Font.PLAIN, 24));
 			lblTime_2.setBounds(1273, 350 + distance, 550, 35);
 			contentPane.add(lblTime_2);
-			lblTime_2.setText(a.getInfo().get(i).getTimeExact().toString()
-					+ "      " +  a.getInfo().get(i).getTimeStart().toString()+" - "+a.getInfo().get(i).getTimeEnd().toString());
+			lblTime_2.setText(agendaParser.getInfo().get(i).getDate().toString()
+					+ "   " +  agendaParser.getInfo().get(i).getTimeStart().toString() + " - " + agendaParser.getInfo().get(i).getTimeEnd().toString());
 
 		}
 

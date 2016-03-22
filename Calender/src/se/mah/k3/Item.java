@@ -12,6 +12,7 @@ public class Item implements Comparable<Item> {
 	private String timeStart;
 	private String timeEnd;
 	private String place="test";
+	private String date;
 
 	public String getPlace() {
 		return place;
@@ -78,6 +79,24 @@ public class Item implements Comparable<Item> {
 
 	}
 
+	public String getDate(){
+		return date;
+	}
+	
+	public void setDate(String inDate) {
+
+		java.util.Date dtDate = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEE dd MMMM");
+		SimpleDateFormat sdfAct = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			dtDate = sdfAct.parse(inDate);
+			this.date = (sdf.format(dtDate));
+
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public int compareTo(Item o) {
 		// TODO Auto-generated method stub
