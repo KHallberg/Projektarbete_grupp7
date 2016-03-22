@@ -67,22 +67,15 @@ public class Test1 extends JFrame {
         	URL feedSource = new URL("http://mah.se/Nyheter/RSS/Kalender-fran-Malmo-hogskola/");
             SyndFeedInput input = new SyndFeedInput();
 			SyndFeed feed = input.build(new XmlReader(feedSource));
-			//System.out.println(feed.toString());
 			List entries = feed.getEntries();
 			for(Object entryAsObject :entries){
 				SyndEntry entry = (SyndEntry)entryAsObject;
 				textArea.append("Title: "+entry.getTitle() + " Author: " + entry.getAuthor()+ "\n");
-
 			}
 		} catch (IllegalArgumentException | FeedException | IOException e) {
 			textArea.append(e.getMessage());
 			//e.printStackTrace();
 		}
-        
-		//FeedFetcherCache feedInfoCache = HashMapFeedInfoCache.getInstance();
-		//FeedFetcher feedFetcher = new HttpURLFeedFetcher(feedInfoCache);
-		//SyndFeed feed = feedFetcher.retrieveFeed(new URL("http://blogs.sun.com/roller/rss/pat"));
-		//System.out.println(feed);
 		
 	}
 
