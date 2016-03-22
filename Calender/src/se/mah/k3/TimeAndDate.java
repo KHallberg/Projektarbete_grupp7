@@ -4,7 +4,7 @@ import java.util.Calendar;
 
 public class TimeAndDate {
 	
-	public static String[] strDays = new String[] {"LÃ¶rdag" ,"SÃ¶ndag", "MÃ¥ndag", "Tisdag", "Onsdag", "Torsdag",
+	public static String[] strDays = new String[] {"Lördag" ,"Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag",
 			    "Fredag"};
 	  
 	public static String[] strMonths = new String[] { "Januari", "Februari", "Mars", "April", "Maj",
@@ -31,9 +31,9 @@ public class TimeAndDate {
 				int month = cal.get(cal.MONTH);
 				
 				DecimalFormat correctTime = new DecimalFormat("00");
-				//Kalender_v2.setTimeOnLabel(correctTime.format(hour) + ":" + correctTime.format(minute));
-				//Kalender_v2.setDateOnLabel(strDays[weekday] + " " + date + " " + strMonths[month]);
-				//clockGUI.setTimeOnLabel(hour + ":" + minute + ":" + second);
+				Kalender_v2.setTimeOnLabel(correctTime.format(hour) + ":" + correctTime.format(minute));
+				Kalender_v2.setDateOnLabel(strDays[weekday] + " " + date + " " + strMonths[month]);
+				clockGUI.setTimeOnLabel(hour + ":" + minute);
 				
 				try {
 					Thread.sleep(900);

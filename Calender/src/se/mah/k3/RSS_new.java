@@ -64,8 +64,8 @@ public class RSS_new {
 			dBuilder = dbFactory.newDocumentBuilder();
 		} catch (ParserConfigurationException e1) {
 			// TODO Auto-generated catch block
-			gui.printError(e1.getMessage());
-			// e1.printStacekTrace();
+			//gui.printError(e1.getMessage());
+			e1.printStackTrace();
 		}
 
 		Document doc = null;
@@ -134,10 +134,12 @@ public class RSS_new {
 			e11.printStackTrace();
 		}
 
-		for (Item i : itemList) {
+		/*for (Item i : itemList) {
 			// System.out.println("osorterad " +i.getTimeExact().toString());
 		}
+		*/
 		Collections.sort(itemList);
+		/*
 		for (Item i : itemList) {
 
 			System.out.println("sorterad  " + i.getTimeExact().toString());
@@ -149,7 +151,7 @@ public class RSS_new {
 			System.out.println("Beskrivning:  " + i.getDescription().toString() + "\n");
 
 		}
-
+*/
 		return itemList;
 
 	}
